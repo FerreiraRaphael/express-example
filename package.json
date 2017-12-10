@@ -48,10 +48,17 @@
     "supertest": "^2.0.0"
   },
   "nyc": {
-    "exclude": ["**/*.spec.js", "coverage", "node_modules"]
+    "exclude": [
+      "**/*.spec.js",
+      "coverage",
+      "node_modules"
+    ]
   },
   "lint-staged": {
-    "*.{js,json,css}": ["prettier --write", "git add"]
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "singleQuote": true,
