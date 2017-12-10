@@ -1,7 +1,10 @@
-'use strict';
+/**
+ * @file Create Tasks table.
+ */
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Tasks', {
+  up: (queryInterface, Sequelize) =>
+    queryInterface.createTable('Tasks', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -21,16 +24,13 @@ module.exports = {
       },
       UserId: {
         type: Sequelize.INTEGER,
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
         allowNull: false,
         references: {
           model: 'Users',
           key: 'id'
         }
       }
-    });
-  },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Tasks');
-  }
+    }),
+  down: queryInterface => queryInterface.dropTable('Tasks')
 };
