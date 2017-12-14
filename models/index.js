@@ -6,6 +6,8 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize').default;
+
+// eslint-disable-next-line import/no-unresolved
 const config = require('../config/config.js')[
   process.env.NODE_ENV || 'development'
 ];
