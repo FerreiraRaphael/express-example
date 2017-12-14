@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 8.4.0
+services:
+  - postgresql
+before_script:
+  - npm run lint
+  - mv config/config.example.js config/config.js
+  - npm run sequelize -- --env test db:create
+  - npm run sequelize -- --env test db:migrate
+after_success:
+ - npm run report:coverage -- --reporter=text-lcov | coveralls
+deploy:
+  app:
+    master: express-starter
+  provider: heroku
+  # run the follwing command to fill this field $ travis encrypt $(heroku auth:token) --add deploy.api_key
+  api_key:
+    secure: DcXk8jwmQNpP1wCwpuP3jf4XNCOxqucrRfvQEN35d3rLJAT3FWe9GOELS9GKi4sRdnlqrixepZOOfWUSv0pL2+E74XsdVYvcI66WrGaFmISyjytrCj/Z9P3wh+QrnNCyRuErCUlIyIuugueR0IJ0FY3DfRlZAPrL4RnlaU9BVUMlGWLu9MAxMjBwwXN7eJRsdfaB30kkuf334+j5UWpjdA8WEg4zczPrhW1CzuJV98tg70AGgJorTBVstlkKmhrsLW6bi+BI8M+QI9B68hao21U65MXCwkdamvsLybX9TI64Kym6MVViU26vx23k406WIIjWV9x8rvbYUWaoeXBQXV3A4aDymk3HYOe4EBE/w84R7qxO2O5NKEFocxca+52+YvaNqcNYrlm+R0h55Tj3046r6PGS0xoIQ1UGf1mxfDLmzohL8epMMKaEPM3M1I2Gm2rAcd8Y1rzGc37qaF2mxxKZT9POR66B5CHcO+KkQNHUSEuZj3daQuIXszPpofhL/mXwDuk2qjiuBE/ycEMu8fDyudHLH3Hj3cds7oCuOSqxDO41BEE81kOCFYEGyqloi6v4HlyMfCzcUFLaZYwm0yCAUK4dZpn3lzlpP3F/mQWcMj7GiyG1Uzdo2zRZgL4IEHrfa2dxvQwB5d1qQSyiu3KXzB3eTcoRL7G1qagDEuQ=
