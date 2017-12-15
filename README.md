@@ -37,5 +37,5 @@ Eslint rules extends [eslint-config-airbnb-base](https://github.com/airbnb/javas
 ## Travis CI and Heroku
 
 To add a deploy key to .travis.yml run:
-`travis encrypt -r FerreiraRaphael/express-starter --org $(heroku auth:token) --add deploy.api_key`
+`travis encrypt heroku auth:token --add deploy.api_key`
 Obs: Make sure that you are logged at the travis cli and heroku cli.
