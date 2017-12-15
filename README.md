@@ -12,7 +12,7 @@ and press this button.
 ## Starting App
 
 Rename `config/config.example.js` to `config/config.js` 
-and Adjust the it to fit your environment. 
+and adjust the it to fit your environment. 
 Once thats done, your database configuration is ready!
 
 Run the following commands:
@@ -33,3 +33,9 @@ There is some [Mocha](https://mochajs.org) based test. You can run them by `npm 
 ## Eslint
 
 Eslint rules extends [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) and [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+
+## Travis CI and Heroku
+
+To add a deploy key to .travis.yml run:
+`travis encrypt -r FerreiraRaphael/express-starter --org $(heroku auth:token) --add deploy.api_key`
+Obs: Make sure that you are logged at the travis cli and heroku cli.
