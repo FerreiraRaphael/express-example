@@ -12,7 +12,7 @@ after_success:
 - npm run report:coverage -- --reporter=text-lcov | coveralls
 deploy:
   app:
-    master: express-starter
+    master: express-starter-api
   provider: heroku
   api_key:
     secure: HplCPj/JjlIBx6JPAkv0sGsX0jV3DqU0x7oASK8IrtEdjjkZqK/+2zPdUdVcFry5U/m5XUiAK3jyOD4dhKgLo9o3QLHahAYj0YD12s6SJYhFI6+br3Ye9llespN/KApm9jHt3WjsA0v5q7q4P3rGwZFNHCqIRha+HEY+F2ko179pINJt2QAmj0GEBjyfsPjtRhM+zjZDX+is+QzALwxMEoDZenEGSkPrfrfSdPYcflsG4TzajBmyg0R3UCLvj4eGlFYaVvTMRNuPZv8sjNqJ3suRk52RmUZRMcxUx6kyzk30biAG1aR/0FvWE8RBgvhXb50Wka+trEQvGzDULaC+KqbcafC6KjHeeCy0YToe4SchRgapFoE62+OalQRk2ddlh6MTjtmq30E3zEZSqqZ9aEMr65TcefD9F2nKYDfrEd+Kh3VR8qvkgALKSgLiqSX4x9N/R/+mCToEZqJes1j/VN2kG+cK5yBFLwU6Fo73M6gM94U8uRfAX1uFsjb9vl49ln465ciNwL1gyrI1IH2DsiwZqvkCidXiIuDrs+SZwm2HsUoIXrHCZm0VZB9mQxmLCu+TrR54K/EwQuNO7qdlMJnNIvSD2HauEX0VqUj+FEz/0M9DL5h8eco9DeaRcFgKTZiXFHtfUIvOI5OG+Jp19da19C7DCDbjD7TMbM3MyOI=
