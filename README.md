@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/FerreiraRaphael/express-starter.svg?branch=master)](https://travis-ci.org/FerreiraRaphael/express-starter) [![Coverage Status](https://coveralls.io/repos/github/FerreiraRaphael/express-starter/badge.svg?branch=master)](https://coveralls.io/github/FerreiraRaphael/express-starter?branch=master)
+
 # Express Starter
 
 This repository is a boilerplate to my projects that use Express and Sequelize.
